@@ -1,0 +1,375 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+    @dutchjudge
+
+3
+0
+
+    1
+
+janboone/opensource_workshop
+Code
+Issues 0
+Pull requests 0
+Wiki
+Pulse
+Graphs
+opensource_workshop/presentation.html
+fb4ebc2 9 days ago
+@janboone janboone edited the syntax a bit
+@janboone
+@TiesdeKok
+356 lines (333 sloc) 16.4 KB
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Ties and Jan" />
+  <title>Open Source Workshop</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" media="print" href="reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Open Source Workshop</h1>
+    <h2 class="author">Ties and Jan</h2>
+    <h3 class="date">May 18th, 2016</h3>
+</section>
+
+<section><section id="introduction" class="titleslide slide level1"><h1>Introduction</h1></section><section id="whats-the-plan" class="slide level2">
+<h1>what's the plan?</h1>
+<ul>
+<li><p>We give short introductions to</p>
+<ul>
+<li>Git</li>
+<li>Github</li>
+<li>Python</li>
+<li>Jupyter notebook</li>
+</ul></li>
+<li><p>and then we will have fun with a notebook</p></li>
+</ul>
+</section><section id="underlying-idea" class="slide level2">
+<h1>underlying idea</h1>
+<ul>
+<li><p>reproducible research:</p>
+<ul>
+<li>write code that is understandable (also to yourself)</li>
+<li>markdown for typesetting, latex for equations etc.</li>
+<li>publish it in a way that is easily accessible</li>
+</ul></li>
+<li><p>at this <a href="https://www.youtube.com/watch?v=oP9Qcjq8UVI">python conference</a>, they use an AER paper to explain why this is important</p></li>
+<li><p>students can make assignments in this way:</p>
+<ul>
+<li>combine their explanations and their code</li>
+<li>post assignments so that you can easily grade them</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="git-and-github" class="titleslide slide level1"><h1>Git and Github</h1></section><section id="git" class="slide level2">
+<h1>git</h1>
+<figure>
+<img src="http://imgs.xkcd.com/comics/git.png" alt="Git" /><figcaption>Git</figcaption>
+</figure>
+</section><section class="slide level2">
+
+<ul>
+<li><p>git is a &quot;versioning system&quot;</p>
+<ul>
+<li>stop calling your files &quot;paper_v1_2016_a_March.tex&quot;</li>
+<li>never lose work by overwriting a previous version</li>
+<li>easily see what you (or your co-author) changed in the last version</li>
+<li>this you can do locally (no github needed)</li>
+</ul></li>
+</ul>
+</section><section id="github" class="slide level2">
+<h1>github</h1>
+<ul>
+<li><p>Github offers two extras:</p>
+<ul>
+<li>backup your files &quot;in the cloud&quot;</li>
+<li>Github pages (<code>gh-pages</code>): special branch that allows you to publish html files</li>
+<li>difference between <a href="https://github.com/janboone/opensource_workshop/blob/gh-pages/presentation.html">this page</a> and <a href="http://janboone.github.io/opensource_workshop/presentation">this one</a></li>
+</ul></li>
+<li><p>additional extras:</p>
+<ul>
+<li>students put homework on github and you can edit/grade</li>
+<li><p>issues page</p>
+<ul>
+<li>team of teachers can respond to questions</li>
+<li>same question needs to be answered only once</li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section id="workflow" class="slide level2">
+<h1>workflow</h1>
+<ul>
+<li>go to github and register</li>
+<li>then create a repository on-line; e.g. https://github.com/janboone/opensource_workshop</li>
+<li>there are lots of tutorials on how to do this</li>
+<li><p>then at the command line:</p>
+<ul>
+<li><code>git clone https://github.com/janboone/opensource_workshop</code></li>
+<li><code>cd opensource_workshop</code></li>
+<li>create new files, change existing files etc.</li>
+<li>when you are done</li>
+<li><code>git add .</code> adds all the files in the directory</li>
+<li><code>git commit -m &quot;say something about what you added&quot;</code></li>
+<li><code>git push</code> changes files at github.com to the latest version</li>
+<li>if you change something again, go through <code>git add</code>, <code>git commit</code> and <code>git push</code></li>
+</ul></li>
+</ul>
+</section><section id="branches" class="slide level2">
+<h1>branches</h1>
+<ul>
+<li>git allows you to have different versions of your work (say, paper)</li>
+<li>useful for PhD students to have a branch <code>supervisor</code> that you can delete after your defense</li>
+<li>main branch is called <code>master</code></li>
+<li>on github there is a special branch <code>gh-pages</code> that publishes html</li>
+<li><p>want to know more?</p>
+<ul>
+<li>http://gitimmersion.com/</li>
+<li>https://www.codecademy.com/learn/learn-git</li>
+<li>https://git-scm.com/book/en/v2</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="python" class="titleslide slide level1"><h1>Python</h1></section><section id="programming" class="slide level2">
+<h1>programming</h1>
+<ul>
+<li>Programming? --&gt; instruct a computer to do something</li>
+<li>How?
+<ul>
+<li>Formulate your instruction in a language that the computer can understand</li>
+</ul></li>
+</ul>
+</section><section id="which-language" class="slide level2">
+<h1>Which language?</h1>
+<figure>
+<img src="http://www.codingdojo.com/blog/wp-content/uploads/Programming-Languages-for-2016_graph.jpg" alt="Language" /><figcaption>Language</figcaption>
+</figure>
+</section><section id="why-python" class="slide level2">
+<h1>Why Python?</h1>
+<ul>
+<li>From the ground up build to be:
+<ul>
+<li>easy to learn</li>
+<li>efficient to use (&quot;programming time is more valuable than computer time&quot;)</li>
+<li>readable for humans</li>
+</ul></li>
+<li>Very rich and constantly growing eco-system of tools for data science<br /><strong>But --&gt; it is still a general purpose language with near-unlimited possibilities!</strong></li>
+<li>The origin of the Jupyter (IPython) Notebook</li>
+</ul>
+</section><section id="what-can-we-use-python-for" class="slide level2">
+<h1>What can we use Python for?</h1>
+<ul>
+<li>Solving models and performing numerical calculations</li>
+<li>Data processing (cleaning, wrangling, etc.)</li>
+<li>Process (large amounts of) files (deal with &quot;big data&quot;)</li>
+<li>Extract information from web-pages (web-crawling)</li>
+<li>Extract textual information (text mining)</li>
+<li>Machine learning applications</li>
+<li>Create (interactive) graphs</li>
+<li><strong>And many many other applications!</strong></li>
+</ul>
+</section><section id="python-is-easy" class="slide level2">
+<h1>Python is easy?!:</h1>
+<pre><code>numbers = [11, 5, 20, 6] 
+response = &#39;The following number is too big:&#39;
+
+for i in numbers:
+    if i &gt; 10:
+        print(response)
+        print(i)</code></pre>
+<p>Can you read what the above code would do?</p>
+</section><section id="how-does-python-execute-code" class="slide level2">
+<h1>How does Python execute code?</h1>
+<p>Python executes code using what is called an interpreter --&gt; <code>the Python interpreter</code> <img src="https://dl.dropboxusercontent.com/u/1265025/python_tut/illustration_1.png" alt="Illustration_1" /></p>
+<p>The Python interpreter goes chronologically through the code and tells the computer line-by-line what to do.</p>
+</section><section id="how-can-you-run-python-code" class="slide level2">
+<h1>How can you run Python code?</h1>
+<p>How do we send our code to the Python interpreter?</p>
+<ol type="1">
+<li><p>Save the code in a <code>.py</code> file and execute it using the console with <code>python example.py</code> --&gt; Prepare the code in a text-editor and send all the code to the interpreter at once</p></li>
+<li><p>Use the interactive Python (IPython) console by typing in console: <code>ipython</code> or <code>python</code> --&gt; Send Python code per line to the interpret and get an immediate response (hence <em>interactive</em>)</p></li>
+<li><p>Use the Jupyter Notebook as an intermediary in your browser --&gt; Send Python code per line but use a web-application instead of the command line</p></li>
+</ol>
+</section><section id="python-2-or-python-3" class="slide level2">
+<h1>Python 2 or Python 3?!</h1>
+<p><strong>Python 2.7:</strong> older version that only receives maintenance updates<br /><strong>Python 3.5:</strong> newest version that receives all the new cool features</p>
+<p>90% of the code will run fine regardless of the version, but Python 3 introduced some changes that are not backwards compatible. For example:</p>
+<pre><code>print &#39;Hello, world!&#39;  #This only works in Python 2.7
+print(&#39;Hello, world!&#39;) #This works in both Python 2.7 and Python 3</code></pre>
+<p><strong>Which version to use? --&gt; hotly debated topic</strong></p>
+<p>My personal advice:</p>
+<blockquote>
+<p>Use Python 3.5 if you can unless you need to rely on prior code that is only available in Python 2.7 It is relatively easy to install both Python 2.7 and Python 3.5 on one computer</p>
+</blockquote>
+</section><section id="the-python-eco-system-modules-and-packages" class="slide level2">
+<h1>The Python eco-system: modules and packages</h1>
+<p>What is a module or package? --&gt; essentially a <code>.py</code> file (<em>module</em>) or a collection of <code>.py</code> files (<em>package</em>) Python modules/packages are pieces of Python code that you can <code>import</code> and use in your own code.</p>
+<p><strong>Two types of modules/packages:</strong></p>
+<ol type="1">
+<li>Build-in modules --&gt; always included with any installation of Python</li>
+<li>Third-party modules/packages --&gt; made available on the internet by people like you and me!<br /> --&gt; The Python Package Index (PyPI) currently hosts around 80,000 packages!</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code>import os            # Standard library
+import pandas as pd  # Third-party</code></pre>
+</section><section id="the-python-eco-system-modules-and-packages-1" class="slide level2">
+<h1>The Python eco-system: modules and packages</h1>
+<p><strong>How to install third-party modules/packages?</strong></p>
+<p>Use <code>pip</code> to install packages that are hosted on the Python Package Index</p>
+<p>Distributions like <code>Anaconda</code> and <code>Enthought Canopy</code> are awesome because they automatically install Python bundled with the most used packages for data science.</p>
+<p>Using a distribution saves you from having to install all the main-stream packages manually!</p>
+</section><section id="want-to-know-more" class="slide level2">
+<h1>Want to know more?</h1>
+<ul>
+<li><a href="https://automatetheboringstuff.com/">Automate the boring stuff</a></li>
+<li><a href="http://quant-econ.net/">Quant-econ.net</a></li>
+<li><a href="http://www.cs.colostate.edu/~anderson/cs545/index.html/doku.php?id=useful_links">other links</a></li>
+</ul>
+</section></section>
+<section><section id="jupyter" class="titleslide slide level1"><h1>Jupyter</h1></section><section id="what-is-the-jupyter-notebook" class="slide level2">
+<h1>What is the Jupyter Notebook?</h1>
+<p>An open-source web application that allows people to create and share documents that contain live code, equations, visualizations, and explanatory text.</p>
+<p>In other words, the Jupyter Notebook provides a programming environment that makes it easy to document your reasoning and explain your code in a human-readable and shareable fashion.</p>
+</section><section id="example" class="slide level2">
+<h1>Example</h1>
+<figure>
+<img src="https://dl.dropboxusercontent.com/u/1265025/python_tut/illustration_2.png" />
+</figure>
+</section><section id="combine-programs-and-programming-languages" class="slide level2">
+<h1>Combine programs and programming languages</h1>
+<p>The Jupyter Notebook is aimed to be language agnostic so it supports a wide variety of programs and programming languages. But there is more: you can also combine programs/languages within one notebook!</p>
+<p>Python is supported by default (as it was originally developed for Python)</p>
+<ul>
+<li><strong>R:</strong> rpy2 (<a href="http://rpy2.bitbucket.org/">link</a>)</li>
+<li><strong>Stata:</strong> IPystata (<a href="https://github.com/TiesdeKok/ipystata">link</a>)</li>
+<li><strong>SAS:</strong> SAS kernel (<a href="https://github.com/sassoftware/sas_kernel">link</a>)</li>
+<li><strong>Matlab:</strong> matlab_kernel (<a href="https://github.com/calysto/matlab_kernel">link</a>)</li>
+</ul>
+</section><section id="how-does-it-work" class="slide level2">
+<h1>How does it work?</h1>
+<p>Only Python:</p>
+<figure>
+<img src="https://dl.dropboxusercontent.com/u/1265025/python_tut/illustration_3a.png" />
+</figure>
+<p>Python + R (for example):</p>
+<figure>
+<img src="https://dl.dropboxusercontent.com/u/1265025/python_tut/illustration_3.png" />
+</figure>
+</section><section id="start-a-notebook-server" class="slide level2">
+<h1>Start a Notebook server:</h1>
+<p>From the command line<br />(if you use Anaconda I would recommend using the <code>Anaconda Command Prompt</code>)</p>
+<ol type="1">
+<li><code>cd</code> to the desired starting directory<br /> --&gt; e.g. <code>cd &quot;C:\Stack\Work\Project_1&quot;</code></li>
+<li>Start the Jupyter Notebook server:<br /> --&gt; <code>jupyter notebook</code></li>
+</ol>
+<p>Use a third-party tool to store directories and start the Jupyter Notebook server (<a href="https://github.com/TiesdeKok/NotebookOpener">Notebook Opener</a>):</p>
+<figure>
+<img src="https://raw.githubusercontent.com/TiesdeKok/NotebookOpener/master/Images/example.png" />
+</figure>
+</section><section id="use-the-jupyter-notebook" class="slide level2">
+<h1>Use the Jupyter Notebook:</h1>
+<p>Two modes:</p>
+<p><code>command mode</code> --&gt; enable by pressing <code>esc</code><br /> <code>edit mode</code> --&gt; enable by pressing <code>enter</code></p>
+<p>Useful shortcuts:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>command mode</code></th>
+<th style="text-align: left;"><code>edit mode</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Y</code> : cell to code</td>
+<td style="text-align: left;"><code>Tab</code> : code completion or indent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>M</code> : cell to markdown</td>
+<td style="text-align: left;"><code>Shift-Tab</code> : tooltip</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>A</code> : insert cell above</td>
+<td style="text-align: left;"><code>Ctrl-A</code> : select all</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>B</code> : insert cell below</td>
+<td style="text-align: left;"><code>Ctrl-Z</code> : undo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>X</code>: cut selected cell</td>
+<td style="text-align: left;">.</td>
+</tr>
+</tbody>
+</table>
+</section><section class="slide level2">
+
+<ul>
+<li><p>In <code>both modes</code></p>
+<ul>
+<li><code>Shift-Enter</code> : run cell, select below</li>
+<li><code>Ctrl-Enter</code> : run cell</li>
+</ul></li>
+</ul>
+<!--
+How to turn this markdown file into a presentation:
+pandoc -s --mathjax --slide-level 2  -t revealjs --highlight-style=zenburn presentation.md -V theme=solarized -o presentation.html 
+pandoc --slide-level 2 --toc --toc-depth=1 -t beamer presentation.md -V theme:Montpellier -o presentation.pdf
+new slide:
+------------
+-->
+
+
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'solarized', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>
+
+    Status API Training Shop Blog About 
+
+    © 2016 GitHub, Inc. Terms Privacy Security Contact Help 
+
